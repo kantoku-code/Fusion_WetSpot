@@ -16,7 +16,7 @@
 		"2052": "分析并创建选定实体上的积水",
 		"1055": "Seçili katı gövdelerdeki su birikintilerini analiz edip oluşturun"
 	},
-	"version":	"",
+	"version":	"0.0.1",
 	"runOnStartup":	true,
 	"supportedOS":	"windows",
 	"editEnabled":	true,

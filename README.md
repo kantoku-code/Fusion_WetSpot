@@ -10,18 +10,30 @@ It can be used to check where water collects on molded parts, or to decide where
 
 ## Installation
 
-To install, download and extract the zip file, then register the "WetSpot" folder as an add-in.
+1. Quit Autodesk Fusion.
+2. Download and extract the zip file.
+3. Run `installer\install_Win.cmd` in the extracted folder.
+4. Follow the on-screen instructions and enter `Y`.
+5. The "WetSpot" folder is copied to `%APPDATA%\Autodesk\Autodesk Fusion 360\API\AddIns\WetSpot`, and the folder opens in Explorer.
 
-To register add-ins, follow the instructions [here](https://www.autodesk.com/support/technical/article/caas/sfdcarticles/sfdcarticles/How-to-install-an-ADD-IN-and-Script-in-Fusion-360.html).
+Once Fusion starts, the add-in is ready to use. No further registration is needed.
+
+To uninstall, delete the copied "WetSpot" folder.
 
 ---
 
 ## Usage
 
 1. Open a design in Fusion and run **WetSpot** from the "SOLID" tab → "CREATE" panel.
+
+   ![WetSpot menu](resources/menu_jpn.png)
+
 2. When the dialog opens, the visible solid bodies are selected automatically. Add or remove bodies to analyze as needed.
+
 3. If needed, specify the gravity direction with a construction axis, sketch line, or linear edge. The default is the **-Z direction**. Use "Reverse direction" to flip it. An arrow shows the direction while the dialog is open.
+
 4. Set the analysis mode and options (see the table below).
+
 5. Click **OK** to run the analysis and create the water pool solid bodies. When it finishes, the volume, maximum depth, and surface area of each pool are shown.
 
 ### Dialog Settings
@@ -31,7 +43,7 @@ To register add-ins, follow the instructions [here](https://www.autodesk.com/sup
 | Bodies to analyze | Visible solids | Solid bodies to analyze (multiple allowed) |
 | Gravity direction | -Z | One construction axis, sketch line, or linear edge |
 | Reverse direction | OFF | Reverses the gravity direction |
-| Analysis mode | Accurate | **Accurate**: Also finds water trapped under overhangs.<br>**Fast**: Uses only the height seen from the gravity direction. |
+| Analysis mode | Accurate | **Accurate**: Also finds water trapped under overhangs.<br>**Fast**: Uses only the height seen from the gravity direction. Not recommended. |
 | Output drain hole locations | OFF | Creates sketch points where the water can drain out completely |
 | Live preview | OFF | Shows the water surface in yellow while the dialog is open |
 
@@ -56,6 +68,8 @@ A prism is built from the outline of each detected pool, and the source bodies a
 ### About numpy
 
 The Python bundled with Fusion does not include numpy. On the first run, numpy is downloaded automatically into the `packages` folder inside the add-in folder to speed up the calculation. This needs an internet connection. If the download fails, the calculation continues in pure Python (the results are the same, but it takes longer).
+
+The numpy download is for Windows (win_amd64) only, so Windows is recommended.
 
 ---
 
@@ -95,69 +109,83 @@ English, Japanese, German, Spanish, French, Italian, Korean, Polish, Portuguese 
 
 選択したソリッドボディに、指定した重力方向から水をかけたときにできる「水たまり」を解析し、水のソリッドボディとして生成する Autodesk Fusion 用アドインです。
 
-成形品の水溜まり確認や、水抜き穴の位置検討などに利用できます。
+成形品の水たまりの確認や、水抜き穴の位置検討に使えます。
 
-**生成される形状は格子による近似計算の結果です。** 使用前に「注意事項」を確認してください。
+**生成される形状は格子による近似計算の結果です。** 使用前に「注意事項」をご確認ください。
 
 ---
 
 ## インストール
 
-インストールする際は、zip ファイルをダウンロード／展開後、「WetSpot」フォルダをアドインとして登録してください。
+1. Autodesk Fusion を終了してください。
+2. zip ファイルをダウンロードし、展開してください。
+3. 展開したフォルダ内の `installer\install_Win.cmd` を実行してください。
+4. 画面の指示に従い、`Y` を入力してください。
+5. 「WetSpot」フォルダが `%APPDATA%\Autodesk\Autodesk Fusion 360\API\AddIns\WetSpot` にコピーされ、エクスプローラーで開きます。
 
-アドインの登録は、[こちら](https://kantoku.hatenablog.com/entry/2021/02/15/161734)の手順に従ってください。
+Fusion を起動すると、そのまま使えます。アドインの登録は不要です。
+
+アンインストールするには、コピーされた「WetSpot」フォルダを削除してください。
 
 ---
 
 ## 使用法
 
-1. Fusion でデザインを開き、「ソリッド」タブ → 「作成」パネルの **WetSpot** を実行します。
-2. ダイアログ表示時、表示中のソリッドボディが自動で選択されます。必要に応じて解析対象のボディを追加・解除してください。
-3. 必要に応じて重力方向を構築軸、スケッチ線、または直線エッジで指定します。未指定の場合は **-Z 方向** です。「方向反転」で向きを逆にできます。ダイアログ表示中は矢印で方向を確認できます。
-4. 解析モードやオプションを設定します（下表参照）。
-5. **OK** を押すと解析が行われ、水たまりのソリッドボディが作成されます。完了後、各水たまりの体積・最大水深・水面積が表示されます。
+1. Fusion でデザインを開き、「ソリッド」タブの「作成」パネルから **WetSpot** を実行します。
+
+   ![WetSpot メニュー](resources/menu_jpn.png)
+
+2. ダイアログを開くと、表示中のソリッドボディが自動で選択されます。解析対象は必要に応じて追加・解除してください。
+
+3. 必要であれば、構築軸・スケッチ線・直線エッジのいずれかで重力方向を指定します。初期値は **-Z 方向** です。向きを逆にするには「方向反転」を使います。ダイアログを開いている間は、矢印で方向を確認できます。
+
+4. 解析モードとオプションを設定します（下表参照）。
+
+5. **OK** を押すと解析が実行され、水たまりのソリッドボディが作成されます。完了すると、各水たまりの体積・最大水深・水面積が表示されます。
 
 ### ダイアログの設定項目
 
 | 項目 | 初期値 | 内容 |
 | --- | --- | --- |
-| 解析ボディ | 表示中のソリッド | 解析対象のソリッドボディ（複数可） |
-| 重力方向 | -Z | 構築軸・スケッチ線・直線エッジのいずれか１つ |
-| 方向反転 | OFF | 重力方向を逆向きにする |
-| 解析モード | 正確 | **正確**：庇（オーバーハング）の下に溜まる水も検出します。<br>**高速**：重力方向から見た高さ情報のみで解析します。 |
-| 水抜き穴位置出力 | OFF | 水を残さず抜くための位置をスケッチ点として出力します |
-| ライブプレビュー | OFF | ダイアログ表示中に水面を黄色でプレビュー表示します |
+| 解析ボディ | 表示中のソリッド | 解析対象のソリッドボディ（複数選択可） |
+| 重力方向 | -Z | 構築軸、スケッチ線、直線エッジのいずれか1つ |
+| 方向反転 | OFF | 重力方向の向きを逆にする |
+| 解析モード | 正確 | **正確**：庇（オーバーハング）の下にたまる水も検出します。<br>**高速**：重力方向から見た高さ情報だけで解析します。推奨しません。 |
+| 水抜き穴位置出力 | OFF | 水を残さず抜けるための位置を、スケッチ点として出力します |
+| ライブプレビュー | OFF | ダイアログを開いている間、水面を黄色で表示します |
 
 ### 生成されるもの
 
-- **Wet Spot** コンポーネント内に、水たまりごとに１つのソリッドボディを作成します。ボディ名は `Wet Spot_01_<体積>mm^3` の形式で、水のマテリアルが設定されます。
+- **Wet Spot** コンポーネント内に、水たまりごとにソリッドボディを1つ作成します。ボディ名は `Wet Spot_01_<体積>mm^3` の形式で、水のマテリアルが設定されます。
 - 「水抜き穴位置出力」が ON の場合、スケッチ **Wet Spot Drain Points** に水抜き点を作成します。
-- 再実行すると、前回生成した水たまりと水抜き点は削除され、新しい結果に置き換わります。
+- 再実行すると、前回の水たまりと水抜き点は削除され、新しい結果に置き換えられます。
 - 処理時間の内訳は「テキストコマンド」ウィンドウに出力されます。
 
 ---
 
 ## 仕組み
 
-対象ボディをメッシュ化し、重力方向から見た XY 格子（最長辺 200 分割）上で各セルのソリッド区間を求めます。そのうえで Priority-Flood 法により、外部へ排水できる最も低い水位を求め、それより低い部分を水たまりとして検出します。
+対象ボディをメッシュ化し、重力方向から見た XY 格子（最長辺を 200 分割）上で、各セルのソリッド区間を求めます。続いて Priority-Flood 法で、外部へ排水できる最も低い水位を求め、それより低い部分を水たまりとして検出します。
 
 - **高速モード**：各セルの最上面だけを使う 2.5D の高さ場で解析します。
-- **正確モード**：各セルの空間区間をノードとしたグラフで解析するため、庇の下や横穴なども扱えます。
+- **正確モード**：各セルの空間区間をノードとするグラフで解析するため、庇の下や横穴も扱えます。
 
-検出した水たまりの輪郭からプリズムを作り、元ボディを差し引くことで水のソリッドを作成します。
+検出した水たまりの輪郭からプリズムを作り、元ボディを差し引いて水のソリッドを作成します。
 
 ### numpy について
 
-Fusion 同梱の Python には numpy が含まれないため、初回実行時に numpy を自動で取得し、アドインフォルダ内の `packages` フォルダへ配置して計算を高速化します。取得にはインターネット接続が必要です。取得に失敗した場合は、純 Python の処理で計算を続行します（結果は同じで、処理時間が長くなります）。
+Fusion 同梱の Python には numpy が含まれません。そのため初回実行時に numpy を自動で取得し、アドインフォルダ内の `packages` フォルダに配置して計算を高速化します。取得にはインターネット接続が必要です。取得に失敗した場合は、純 Python の処理で計算を続けます（結果は同じですが、処理時間は長くなります）。
+
+numpy は Windows 版（win_amd64）のみ取得するため、Windows を推奨します。
 
 ---
 
 ## 注意事項
 
-- **出来上がりの形状は格子による近似です。** 細い溝、急な段差、細かな凹凸を正確に再現できない場合があります。生成後の形状を確認してください。
-- 外部へつながる経路が無い密閉された空洞には水を入れません。
-- 対象はソリッドボディのみです。サーフェス・メッシュボディには対応していません。
-- WetSpot が生成した水たまりボディは解析対象から除外されます。
+- **出来上がりの形状は格子による近似です。** 細い溝、急な段差、細かな凹凸は正確に再現されない場合があります。生成後に形状を確認してください。
+- 外部へ通じる経路がない密閉された空洞には、水は入りません。
+- 対象はソリッドボディのみです。サーフェスボディとメッシュボディには対応していません。
+- WetSpot が生成した水たまりボディは、解析対象から除外されます。
 - パラメトリック（履歴あり）デザインでは、水たまりボディは Base Feature **Wet Spot Pools** 内に作成されます。
 - Windows のみ対応です。
 
@@ -186,4 +214,4 @@ Fusion の表示言語に合わせて、以下の言語で表示されます。
 
 ## 謝辞
 
-- [日本語フォーラム](https://forums.autodesk.com/t5/fusion-ri-ben-yuforamu/bd-p/fusion-forum-ja)の皆さん、ありがとう。
+- [日本語フォーラム](https://forums.autodesk.com/t5/fusion-ri-ben-yuforamu/bd-p/fusion-forum-ja)の皆さん、ありがとうございます。
