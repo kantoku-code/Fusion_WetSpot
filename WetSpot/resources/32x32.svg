@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 128 128" role="img" aria-label="WetSpot">
+  <defs>
+    <linearGradient id="metal" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#aeb5bb"/><stop offset=".42" stop-color="#5b626a"/><stop offset="1" stop-color="#2a3038"/></linearGradient>
+    <linearGradient id="bowl" x1="0" y1="0" x2=".7" y2="1"><stop stop-color="#303943"/><stop offset=".52" stop-color="#626b74"/><stop offset="1" stop-color="#a6afb5"/></linearGradient>
+    <radialGradient id="water" cx=".35" cy=".72" r=".75"><stop stop-color="#5ae8ff"/><stop offset=".48" stop-color="#168cdb"/><stop offset="1" stop-color="#0750aa"/></radialGradient>
+  </defs>
+  <path d="M12 65h17c3 0 5 3 7 8 5 16 14 24 28 24s23-8 28-24c2-5 4-8 7-8h17l5 10v39c0 5-4 9-9 9H16c-5 0-9-4-9-9V75z" fill="url(#metal)" stroke="#252c34" stroke-width="2"/>
+  <path d="M12 65h17c4 0 7 6 10 13 5 13 13 20 25 20s20-7 25-20c3-7 6-13 10-13h17l-7 10h-9c-3 0-6 5-9 12-6 13-14 19-27 19s-21-6-27-19c-3-7-6-12-9-12h-9z" fill="#c3c9cc"/>
+  <path d="M28 67c4 0 7 6 10 13 5 13 13 21 26 21s21-8 26-21c3-7 6-13 10-13h7c-4 23-20 39-43 39S25 90 21 67z" fill="url(#bowl)" stroke="#323b44" stroke-width="1.5"/>
+  <path d="M64 5C58 19 45 34 44 45c-2 13 7 22 20 22s22-9 20-22C83 34 70 19 64 5z" fill="url(#water)" stroke="#064c9a" stroke-width="2"/>
+  <path d="M62 17C57 28 50 38 49 46c-1 6 1 10 4 12-1-13 7-25 9-41z" fill="#c3f9ff" opacity=".85"/>
+  <path d="M77 43c4 12-1 19-12 20" fill="none" stroke="#78eaff" stroke-width="3" stroke-linecap="round" opacity=".75"/>
+</svg>

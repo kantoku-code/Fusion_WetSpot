@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 64 64" role="img" aria-label="WetSpot">
+  <defs>
+    <linearGradient id="metal" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#919ba4"/><stop offset="1" stop-color="#303741"/></linearGradient>
+    <linearGradient id="water" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#73efff"/><stop offset=".5" stop-color="#138cdd"/><stop offset="1" stop-color="#0751a6"/></linearGradient>
+  </defs>
+  <path d="M5 34h11c3 0 4 6 7 11 2 3 5 5 9 5s7-2 9-5c3-5 4-11 7-11h11v23c0 3-2 5-5 5H10c-3 0-5-2-5-5z" fill="url(#metal)" stroke="#252d36" stroke-width="1.5"/>
+  <path d="M12 34h6c3 0 5 12 14 12s11-12 14-12h6c-2 12-9 20-20 20S14 46 12 34z" fill="#69737c" stroke="#c6cdd0" stroke-width="2"/>
+  <path d="M32 2C28 11 22 19 22 25c0 7 4 11 10 11s10-4 10-11c0-6-6-14-10-23z" fill="url(#water)" stroke="#074d99" stroke-width="1.5"/>
+  <path d="M30 13c-3 5-5 9-5 13" fill="none" stroke="#c5faff" stroke-width="2" stroke-linecap="round"/>
+</svg>

@@ -1,0 +1,24 @@
+{
+	"autodeskProduct":	"Fusion",
+	"type":	"addin",
+	"author":	"kantoku",
+	"description":	{
+		"": "Analyze and create water pools on selected solid bodies",
+		"1031": "Wasseransammlungen an ausgewählten Volumenkörpern analysieren und erzeugen",
+		"1033": "Analyze and create water pools on selected solid bodies",
+		"1034": "Analizar y crear charcos de agua en los cuerpos sólidos seleccionados",
+		"1036": "Analyser et créer des poches d’eau sur les corps solides sélectionnés",
+		"1040": "Analizzare e creare accumuli d’acqua sui corpi solidi selezionati",
+		"1041": "選択したソリッドにできる水たまりを解析・生成します",
+		"1042": "선택한 솔리드 바디의 물 고임을 분석하고 생성합니다",
+		"1045": "Analizuj i twórz zbiorniki wody na wybranych bryłach",
+		"1046": "Analisar e criar acúmulos de água nos corpos sólidos selecionados",
+		"2052": "分析并创建选定实体上的积水",
+		"1055": "Seçili katı gövdelerdeki su birikintilerini analiz edip oluşturun"
+	},
+	"version":	"",
+	"runOnStartup":	true,
+	"supportedOS":	"windows",
+	"editEnabled":	true,
+	"iconFilename":	"AddInIcon.svg"
+}
